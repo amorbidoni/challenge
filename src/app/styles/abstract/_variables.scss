@@ -1,0 +1,26 @@
+$color-primary-light: #49418f;
+$color-primary-medium: #3c357a;
+$color-primary-dark: #201d45;
+
+$color-grey-light: #b3b3b3;
+
+$color-alert-medium: #c22132;
+
+// backgrounds
+
+$bg-gradient: linear-gradient(
+  180deg,
+  $color-primary-medium 0%,
+  $color-primary-dark 100%
+);
+$bg-grey-light: #fbfbfb;
+$bg-gradient-churrasco: linear-gradient(
+  90deg,
+  rgba(194, 33, 50, 1) 0%,
+  rgba(132, 20, 122, 1) 66%,
+  rgba(82, 51, 136, 1) 100%
+);
+
+// FUENTE
+
+$font-roboto: "Roboto", sans-serif;

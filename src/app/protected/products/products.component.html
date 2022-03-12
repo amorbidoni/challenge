@@ -1,0 +1,30 @@
+<div class="component">
+  <div class="title">
+    <h2 class="title__primary">PRODUCTOS</h2>
+  </div>
+  <div class="products-container">
+    <div class="product" *ngFor="let product of products">
+      <div class="product__title">
+        <p>{{ product.name }}</p>
+      </div>
+      <div class="product__image">
+        <img
+          [src]="product.pictures[0] ? product.pictures[0] : product.pictures"
+          [alt]="product.name"
+        />
+      </div>
+      <div class="product__description">
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="product__price">
+        <p>${{ product.price }}</p>
+      </div>
+      <div class="product__btn">
+        <button class="btn btn__primary--light">Comprar</button>
+      </div>
+    </div>
+    <div *ngIf="loading" class="loading-component">
+      <app-loading></app-loading>
+    </div>
+  </div>
+</div>

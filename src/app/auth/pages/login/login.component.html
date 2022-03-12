@@ -1,0 +1,69 @@
+<div class="component">
+  <div class="login">
+    <div class="login__logo">
+      <img src="../../assets/LOGO1.png" alt="Logo Churrasco" />
+    </div>
+    <form
+      (ngSubmit)="login()"
+      class="login-form"
+      autocomplete="off"
+      [formGroup]="myForm"
+    >
+      <div class="login__form">
+        <div class="login-form__item">
+          <input
+            class="login-form__item--input"
+            type="text"
+            placeholder="Username"
+            formControlName="username"
+          />
+          <img
+            class="login-form__item--icon"
+            src="../../assets/user-alt.svg"
+            alt="Usuario"
+          />
+        </div>
+        <div class="login-form__item">
+          <input
+            class="login-form__item--input"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <img
+            class="login-form__item--icon"
+            src="../../assets/lock.svg"
+            alt="Contraseña"
+          />
+        </div>
+      </div>
+      <div class="login__btns">
+        <div class="checkbox">
+          <div class="checkbox">
+            <label for="remember-password" class="checkbox__label">
+              remember
+              <input
+                id="remember-password"
+                type="checkbox"
+                class="checkbox__input"
+                formControlName="rememberPass"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn__primary--light" type="submit">Log in</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="modalError" class="alert-modal" [@modalAnimation]>
+    <p class="alert-modal__text">{{ textAlert }}</p>
+    <button
+      class="btn btn__primary--light alert-modal__btn"
+      (click)="closeModalAlert()"
+      [disabled]="myForm.invalid"
+    >
+      Ok
+    </button>
+  </div>
+</div>

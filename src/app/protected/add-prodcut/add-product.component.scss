@@ -1,0 +1,23 @@
+@import "../../styles/layouts/forms";
+@import "../../styles//abstract/variables";
+@import "../../styles/abstract/mixins";
+@import "../../styles/components/buttons";
+@import "../../styles/base/typography";
+.component {
+  padding: 50px 100px;
+  background: $bg-gradient;
+  min-height: 100vh;
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+.add-product {
+  background-color: white;
+  border-radius: 4px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+}

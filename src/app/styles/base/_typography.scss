@@ -1,0 +1,21 @@
+@import "../abstract/mixins";
+@import "../abstract/variables";
+
+.title__primary {
+  @include fontRoboto(700, 5rem);
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(194, 33, 50, 1) 0%,
+    rgba(132, 20, 122, 1) 66%,
+    rgba(82, 51, 136, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  display: inline;
+  width: auto;
+  margin: 0 auto;
+  text-transform: uppercase;
+}

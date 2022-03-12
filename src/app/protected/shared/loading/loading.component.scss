@@ -1,0 +1,31 @@
+.loading {
+  width: 150;
+  height: 150;
+
+  &__circle {
+    width: 150;
+    height: 150;
+    border-radius: 50%;
+    svg {
+      width: 150px;
+      height: 150px;
+      animation-name: loadingAnimation;
+      animation-duration: 3s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      path {
+        stroke: #201d45;
+      }
+    }
+  }
+}
+
+@keyframes loadingAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

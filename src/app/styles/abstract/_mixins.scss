@@ -1,0 +1,7 @@
+@import "./variables";
+
+@mixin fontRoboto($weight, $size) {
+  font-family: $font-roboto;
+  font-weight: $weight;
+  font-size: $size;
+}

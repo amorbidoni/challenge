@@ -1,0 +1,35 @@
+@import "../../../styles/abstract/variables";
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: $bg-gradient;
+  &__logo {
+    img {
+      width: 80px;
+    }
+  }
+  &__list {
+    list-style: none;
+    height: 25px;
+    &--item {
+      display: inline-block;
+      color: rgb(226, 225, 225);
+      font-size: 1.6rem;
+      padding: 10px 20px;
+      cursor: pointer;
+
+      p {
+        transition: all 0.3s;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid white;
+      }
+      &:hover p {
+        transform: translateX(-3px);
+      }
+    }
+  }
+}
