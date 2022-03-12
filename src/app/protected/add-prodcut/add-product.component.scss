@@ -20,4 +20,9 @@
   width: 50%;
   margin: 0 auto;
   padding: 30px;
+  .form__btns {
+    button {
+      width: 100%;
+    }
+  }
 }

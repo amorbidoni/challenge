@@ -15,109 +15,110 @@
         <label for="input--name" class="form__item--label"
           >Nombre del producto</label
         >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
+        <p *ngIf="validForm('name')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div [ngStyle]="styleLineForm('name')" class="form__item--line"></div>
+      </div>
+      <div class="form__item">
+        <input
+          id="input--sku"
+          type="text"
+          class="form__item--input"
+          formControlName="SKU"
+          placeholder="SKU"
+        />
+        <label for="input--sku" class="form__item--label">SKU</label>
+        <p *ngIf="validForm('SKU')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div [ngStyle]="styleLineForm('SKU')" class="form__item--line"></div>
+      </div>
+      <div class="form__item">
+        <input
+          id="input--code"
+          type="text"
+          class="form__item--input"
+          formControlName="code"
+          placeholder="Código"
+        />
+        <label for="input--code" class="form__item--label">Código</label>
+        <p *ngIf="validForm('code')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div [ngStyle]="styleLineForm('code')" class="form__item--line"></div>
+      </div>
+      <div class="form__item">
+        <input
+          id="input--description"
+          type="text"
+          class="form__item--input"
+          formControlName="description"
+          placeholder="Descripción del producto"
+        />
+        <label for="input--description" class="form__item--label"
+          >Descripción del producto</label
+        >
+        <p *ngIf="validForm('description')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div
+          [ngStyle]="styleLineForm('description')"
+          class="form__item--line"
+        ></div>
       </div>
       <div class="form__item">
         <input
           id="input--name"
-          type="text"
+          type="file"
           class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
+          formControlName="pictures"
+          placeholder="Imagen/es"
         />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
+        <label for="input--name" class="form__item--label">Imagen/es</label>
+        <p *ngIf="validForm('pictures')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div
+          [ngStyle]="styleLineForm('pictures')"
+          class="form__item--line"
+        ></div>
       </div>
       <div class="form__item">
         <input
-          id="input--name"
+          id="input--price"
           type="text"
           class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
+          formControlName="price"
+          placeholder="Precio"
         />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
+        <label for="input--price" class="form__item--label">Precio</label>
+        <p *ngIf="validForm('price')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div [ngStyle]="styleLineForm('price')" class="form__item--line"></div>
       </div>
       <div class="form__item">
         <input
-          id="input--name"
+          id="input--currency"
           type="text"
           class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
+          formControlName="currency"
+          placeholder="Moneda"
         />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
-      </div>
-      <div class="form__item">
-        <input
-          id="input--name"
-          type="text"
-          class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
-        />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
-      </div>
-      <div class="form__item">
-        <input
-          id="input--name"
-          type="text"
-          class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
-        />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
-      </div>
-      <div class="form__item">
-        <input
-          id="input--name"
-          type="text"
-          class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
-        />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
-      </div>
-      <div class="form__item">
-        <input
-          id="input--name"
-          type="text"
-          class="form__item--input"
-          formControlName="name"
-          placeholder="Nombre del producto"
-        />
-        <label for="input--name" class="form__item--label"
-          >Nombre del producto</label
-        >
-        <p *ngIf="alert" class="form__item--alert">* Campo obligatorio</p>
-        <div class="form__item--line"></div>
+        <label for="input--currency" class="form__item--label">Moneda</label>
+        <p *ngIf="validForm('currency')" class="form__item--alert">
+          * Campo obligatorio
+        </p>
+        <div
+          [ngStyle]="styleLineForm('currency')"
+          class="form__item--line"
+        ></div>
       </div>
       <div class="form__btns">
-        <button type="submit">Agregar producto</button>
+        <button class="btn btn__primary--light" type="submit">
+          Agregar producto
+        </button>
       </div>
     </form>
   </div>

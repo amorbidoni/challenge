@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -14,7 +14,14 @@ export class AddProdcutComponent implements OnInit {
   ) {}
   alert: boolean = true;
   myForm: FormGroup = this.fb.group({
-    name: [],
+    name: [, Validators.required],
+    SKU: [, Validators.required],
+    code: [, Validators.required],
+    description: [, Validators.required],
+    pictures: [, Validators.required],
+    price: [, Validators.required],
+    currency: [, Validators.required],
+    // __v: [, Validators.required],
   });
   ngOnInit(): void {}
   submit() {
@@ -24,7 +31,7 @@ export class AddProdcutComponent implements OnInit {
         code: 121231203,
         name: 'Manzana Verde',
         description: 'Cajón Manzana verde - 20kg',
-        // pictures: 'http://placekitten.com/200/200',
+        pictures: 'http://placekitten.com/200/200',
         price: 922,
         currency: '.s/',
         __v: 0,
@@ -32,5 +39,24 @@ export class AddProdcutComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
       });
+  }
+  //FORM VALIDATORS
+  validForm(campo: string): {} | null {
+    if (
+      this.myForm.controls[campo].errors &&
+      this.myForm.controls[campo].touched
+    ) {
+      return { errorMsg: 'Campo obligatorio' };
+    } else {
+      return null;
+    }
+  }
+  styleLineForm(campo: string) {
+    if (this.validForm(campo)) {
+      return {
+        backgroundColor: '#c22132',
+      };
+    }
+    return {};
   }
 }
