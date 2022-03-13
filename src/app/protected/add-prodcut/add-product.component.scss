@@ -14,6 +14,26 @@
     margin-bottom: 30px;
   }
 }
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary-dark;
+  z-index: 20;
+}
+.modal-confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+}
 .add-product {
   background-color: white;
   border-radius: 4px;
@@ -24,5 +44,19 @@
     button {
       width: 100%;
     }
+  }
+}
+.overlay-animation {
+  animation-name: overlayAnimation;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes overlayAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
   }
 }

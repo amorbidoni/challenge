@@ -13,6 +13,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     Authorization: `Bearer ${localStorage.getItem('token') || ''}`,
+    'Access-control-allow-origin': '*',
   }),
 };
 
@@ -49,10 +50,11 @@ export class ProductsService {
       .pipe(catchError(this.handleError));
   }
 
-  addProduct(product: any): Observable<any> {
+  addProduct(product: adddProductInterface): Observable<ProductsInterface> {
     let urlAddProduct: string = 'http://localhost:3000/addproduct';
+
     return this.http
-      .post<any>(urlAddProduct, product, httpOptions)
+      .post<ProductsInterface>(urlAddProduct, product, httpOptions)
       .pipe(catchError(this.handleError));
   }
 }

@@ -8,9 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './products/products.component';
 import { AddProdcutComponent } from './add-prodcut/add-product.component';
 import { SharedModule } from './shared/shared.module';
+import { ModalProductConfirmationComponent } from './modal-product-confirmation/modal-product-confirmation.component';
 
 @NgModule({
-  declarations: [DashboardComponent, ProductsComponent, AddProdcutComponent],
+  declarations: [DashboardComponent, ProductsComponent, AddProdcutComponent, ModalProductConfirmationComponent],
   imports: [
     CommonModule,
     RouterModule,

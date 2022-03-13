@@ -1,0 +1,27 @@
+@import "../../styles/components/productCard";
+@import "../../styles/components/buttons";
+@import "../../styles/abstract/utilities";
+@import "../../styles/abstract/variables";
+
+.overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $bg-gradient-churrasco;
+  width: 400px;
+  height: 400px;
+  border-radius: 4px;
+}

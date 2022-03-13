@@ -56,5 +56,58 @@
       right: 10px;
       bottom: 44px;
     }
+    &--icon {
+      width: 30px;
+      fill: $color-primary-light;
+      position: absolute;
+      left: 10px;
+      opacity: 50%;
+      transform: all 0.3s;
+    }
   }
+}
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+input[type="file"] ~ label {
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+}
+input[type="file"] ~ label:hover ~ svg {
+  fill: $color-primary-dark;
+}
+input[type="file"] ~ label:hover ~ .form__item--line {
+  background: $color-primary-dark;
+}
+input[type="file"] ~ div {
+  margin-top: 42px;
+}
+input[type="file"] ~ .input-file__data {
+  @include fontRoboto(300, 2rem);
+  color: #8e8e8e;
+  width: 90%;
+  height: 30px;
+
+  position: absolute;
+  left: 49px;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.5s;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

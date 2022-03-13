@@ -1,0 +1,29 @@
+<div class="overlay" (click)="closeModal()">
+  <div class="component">
+    <div class="product">
+      <div class="product__title">
+        <p>{{ product.name }}</p>
+      </div>
+      <div class="product__image">
+        <img
+          [src]="product.pictures[0] ? product.pictures[0] : product.pictures"
+          [alt]="product.name"
+        />
+      </div>
+      <div class="product__description">
+        <p>Description: {{ product.description }}</p>
+      </div>
+      <div class="product__description">
+        <p>Code: {{ product.code }}</p>
+      </div>
+      <div class="product__description">
+        <p>SKU: {{ product.SKU }}</p>
+      </div>
+      <div class="product__description padd-bottom-10">
+        <p>Price: {{ product.price }}</p>
+      </div>
+    </div>
+
+    <button class="btn btn__primary--light" (click)="closeModal()">OK</button>
+  </div>
+</div>

@@ -30,14 +30,12 @@ export class LoginComponent {
   // SUBMIT
   login() {
     const { username, password } = this.myForm.value;
-    // console.log(this.myForm.value);
+
     if (this.myForm.touched && this.myForm.valid) {
       this.AuthService.login(username, password).subscribe((resp) => {
         if (resp.token) {
-          // console.log(resp);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard/products']);
         } else {
-          // console.log(resp);
           this.modalError = true;
           this.textAlert = resp;
         }
