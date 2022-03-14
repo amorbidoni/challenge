@@ -47,7 +47,7 @@ export class AddProdcutComponent implements OnInit {
       code: controls.code.value,
       name: controls.name.value,
       description: controls.description.value,
-      pictures: [],
+      pictures: controls.pictures.value,
       price: controls.price.value,
       currency: controls.currency.value,
       __v: 0,
@@ -56,6 +56,7 @@ export class AddProdcutComponent implements OnInit {
   addNewProduct() {
     this.productService.addProduct(this.newProductPreview).subscribe((res) => {
       this.newProductAdded = res;
+      console.log(res);
       this.myForm.reset();
       this.inputFileData = '';
     });

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://churrasco.uk.to:3005',
+  baseUrl: 'http://vps.churrasco.digital:3005',
 };
 
 /*

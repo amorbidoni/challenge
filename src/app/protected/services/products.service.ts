@@ -8,6 +8,7 @@ import { ProductsInterface } from '../interfaces/product.interfaces';
 import { adddProductInterface } from '../interfaces/addProduct.interfaces';
 import { catchError } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -42,19 +43,20 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  baseUrl: string = `http://churrasco.uk.to:3005/products`;
+  baseUrl: string = environment.baseUrl;
 
   getAllProducts(): Observable<ProductsInterface[]> {
+    let url = `${this.baseUrl}/products`;
     return this.http
-      .get<ProductsInterface[]>(this.baseUrl, httpOptions)
+      .get<ProductsInterface[]>(url, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
   addProduct(product: adddProductInterface): Observable<ProductsInterface> {
-    let urlAddProduct: string = 'http://localhost:3000/addproduct';
+    let url: string = `${this.baseUrl}/addproduct`;
 
     return this.http
-      .post<ProductsInterface>(urlAddProduct, product, httpOptions)
+      .post<ProductsInterface>(url, product, httpOptions)
       .pipe(catchError(this.handleError));
   }
 }
