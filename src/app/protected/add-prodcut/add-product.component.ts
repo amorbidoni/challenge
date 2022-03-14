@@ -56,7 +56,6 @@ export class AddProdcutComponent implements OnInit {
   addNewProduct() {
     this.productService.addProduct(this.newProductPreview).subscribe((res) => {
       this.newProductAdded = res;
-      console.log(res);
       this.myForm.reset();
       this.inputFileData = '';
     });
