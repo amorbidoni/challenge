@@ -4,18 +4,21 @@ import { Component } from '@angular/core';
 import { ModalAnimation } from 'src/app/auth/animations/modal.animation';
 
 import { ProductsInterface } from '../interfaces/product.interfaces';
+import { adddProductInterface } from '../interfaces/addProduct.interfaces';
 
 @Component({
   selector: 'app-modal-product-confirmation',
   templateUrl: './modal-product-confirmation.component.html',
   styleUrls: ['./modal-product-confirmation.component.scss'],
+  animations: [ModalAnimation],
 })
 export class ModalProductConfirmationComponent {
-  @Input() product!: ProductsInterface;
+  @Input() product!: adddProductInterface;
+  @Input() imageUrl!: string;
   @Output() emmitCloseModal = new EventEmitter();
 
-  closeModal() {
-    this.emmitCloseModal.emit(false);
+  closeModal(e: boolean) {
+    this.emmitCloseModal.emit(e);
   }
   constructor() {}
 }

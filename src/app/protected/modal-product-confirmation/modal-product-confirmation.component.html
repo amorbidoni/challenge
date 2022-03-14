@@ -1,14 +1,11 @@
-<div class="overlay" (click)="closeModal()">
-  <div class="component">
+<div class="overlay" (click)="closeModal(false)">
+  <div class="component" [@modalAnimation]>
     <div class="product">
       <div class="product__title">
         <p>{{ product.name }}</p>
       </div>
       <div class="product__image">
-        <img
-          [src]="product.pictures[0] ? product.pictures[0] : product.pictures"
-          [alt]="product.name"
-        />
+        <img [src]="imageUrl" [alt]="product.pictures[0]" />
       </div>
       <div class="product__description">
         <p>Description: {{ product.description }}</p>
@@ -23,7 +20,13 @@
         <p>Price: {{ product.price }}</p>
       </div>
     </div>
-
-    <button class="btn btn__primary--light" (click)="closeModal()">OK</button>
+    <div class="btn-container">
+      <button class="btn btn__primary--light" (click)="closeModal(false)">
+        Cancel
+      </button>
+      <button class="btn btn__primary--light" (click)="closeModal(true)">
+        Add product
+      </button>
+    </div>
   </div>
 </div>
